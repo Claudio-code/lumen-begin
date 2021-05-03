@@ -7,7 +7,8 @@
     "require": {
         "php": "^7.3|^8.0",
         "friendsofphp/php-cs-fixer": "^2.18",
-        "laravel/lumen-framework": "^8.0"
+        "laravel/lumen-framework": "^8.0",
+        "stechstudio/laravel-php-cs-fixer": "^2.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
