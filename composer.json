@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": "^7.3|^8.0",
+        "friendsofphp/php-cs-fixer": "^2.18",
         "laravel/lumen-framework": "^8.0"
     },
     "require-dev": {
@@ -33,6 +34,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
+        "php-cs-fixer": "php-cs-fixer fix ./ --config=./.php_cs",
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ]

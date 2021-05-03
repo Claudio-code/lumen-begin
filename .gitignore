@@ -1,6 +1,7 @@
 /vendor
 /.idea
-#/.devOps/dbdata/*
+/.devOps/dbdata/*
 Homestead.json
 Homestead.yaml
 .phpunit.result.cache
+.php_cs.cache
