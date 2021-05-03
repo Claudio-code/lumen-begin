@@ -1,0 +1,50 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: lumen-app
+    entrypoint: ./.devOps/entrypoint.sh
+    env_file:
+      - .env
+    volumes:
+      - .:/var/www
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  nginx:
+    build: .devOps/nginx
+    container_name: lumen-nginx
+    restart: always
+    tty: true
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www
+    networks:
+      - app-network
+    depends_on:
+      - app
+
+  db:
+    build: .devOps/mysql
+    container_name: lumen-db
+    restart: always
+    tty: true
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./.devOps/dbdata:/var/lib/mysql
+      - ./.devOps/mysql:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_DATABASE=homestead
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=secret
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
