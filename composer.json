@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.0",
         "friendsofphp/php-cs-fixer": "^2.18",
+        "illuminate/pagination": "^8.40",
         "laravel/lumen-framework": "^8.0",
         "stechstudio/laravel-php-cs-fixer": "^2.3"
     },
