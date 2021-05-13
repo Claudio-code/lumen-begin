@@ -6,3 +6,4 @@ Homestead.json
 Homestead.yaml
 .phpunit.result.cache
 .php_cs.cache
+dockDockBuildParams.json
