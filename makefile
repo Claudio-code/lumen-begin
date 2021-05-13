@@ -18,3 +18,9 @@ run-all-tests:
 
 fix-all:
 	docker exec -it lumen-app bash -c  "composer run-script php-cs-fixer"
+
+seeds:
+	docker exec -it lumen-app bash -c  "php artisan db:seed"
+
+migrate:
+	docker exec -it lumen-app bash -c  "php artisan migrate"
